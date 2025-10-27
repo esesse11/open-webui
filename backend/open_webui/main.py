@@ -95,6 +95,7 @@ from open_webui.routers import (
     scim,
     custom_openai,
     gemini,
+    responses,
 )
 
 from open_webui.routers.retrieval import (
@@ -1328,6 +1329,9 @@ app.include_router(custom_openai.router)
 
 # Google Gemini API
 app.include_router(gemini.router)
+
+# OpenAI Responses API (for o3-deep-research and advanced reasoning models)
+app.include_router(responses.router)
 
 
 try:

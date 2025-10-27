@@ -817,6 +817,20 @@ async def generate_chat_completion(
     metadata = payload.pop("metadata", None)
 
     model_id = form_data.get("model")
+
+    # Check if model requires responses API (o3-deep-research, o3-pro, etc.)
+    if model_id:
+        model_lower = model_id.lower()
+        # Models that require /v1/responses endpoint
+        if (
+            "deep-research" in model_lower
+            or "o3-pro" in model_lower
+            or "o4-mini-deep-research" in model_lower
+        ):
+            log.info(f"Routing {model_id} to responses API endpoint")
+            # Import here to avoid circular imports
+            from open_webui.routers import responses as responses_router
+            return await responses_router.create_response(request, form_data, user, bypass_filter)
     model_info = Models.get_model_by_id(model_id)
 
     # Check model info and override the payload
