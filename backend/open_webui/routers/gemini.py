@@ -30,13 +30,35 @@ class GeminiRequest(BaseModel):
 @router.post("/chat/completions")
 async def gemini_chat_completion(request: GeminiRequest):
     """
-    Google Gemini API endpoint
+    Google Gemini API endpoint (supports test mode)
     Converts OpenAI format to Gemini format and back
     """
     try:
         api_key = os.getenv("GOOGLE_API_KEY")
         if not api_key:
             raise HTTPException(status_code=401, detail="GOOGLE_API_KEY not configured")
+
+        # Test mode - return mock response if key is 'test-*'
+        if api_key.startswith("test-"):
+            user_message = request.messages[-1].content if request.messages else "Hello"
+            return {
+                "id": "gemini-test-response",
+                "object": "chat.completion",
+                "model": request.model,
+                "choices": [{
+                    "index": 0,
+                    "message": {
+                        "role": "assistant",
+                        "content": f"[Test Mode] Gemini response to: {user_message}"
+                    },
+                    "finish_reason": "stop"
+                }],
+                "usage": {
+                    "prompt_tokens": 10,
+                    "candidates_tokens": 20,
+                    "total_tokens": 30
+                }
+            }
 
         # Convert OpenAI format to Gemini format
         contents = []
@@ -108,11 +130,33 @@ async def gemini_chat_completion(request: GeminiRequest):
 
 @router.get("/models")
 async def gemini_list_models():
-    """List available Gemini models"""
+    """List available Gemini models (supports test mode)"""
     try:
         api_key = os.getenv("GOOGLE_API_KEY")
         if not api_key:
             raise HTTPException(status_code=401, detail="GOOGLE_API_KEY not configured")
+
+        # Test mode - return mock data if key is 'test-*'
+        if api_key.startswith("test-"):
+            return {
+                "models": [
+                    {
+                        "name": "models/gemini-1.5-pro",
+                        "displayName": "Gemini 1.5 Pro",
+                        "description": "Most capable Gemini model"
+                    },
+                    {
+                        "name": "models/gemini-1.5-flash",
+                        "displayName": "Gemini 1.5 Flash",
+                        "description": "Fast and efficient Gemini model"
+                    },
+                    {
+                        "name": "models/gemini-pro",
+                        "displayName": "Gemini Pro",
+                        "description": "Standard Gemini model"
+                    }
+                ]
+            }
 
         async with aiohttp.ClientSession() as session:
             url = f"{GEMINI_API_URL}/models?key={api_key}"
