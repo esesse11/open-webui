@@ -93,6 +93,8 @@ from open_webui.routers import (
     users,
     utils,
     scim,
+    custom_openai,
+    gemini,
 )
 
 from open_webui.routers.retrieval import (
@@ -1320,6 +1322,12 @@ app.include_router(utils.router, prefix="/api/v1/utils", tags=["utils"])
 # SCIM 2.0 API for identity management
 if SCIM_ENABLED:
     app.include_router(scim.router, prefix="/api/v1/scim/v2", tags=["scim"])
+
+# Custom OpenAI Compatible API
+app.include_router(custom_openai.router)
+
+# Google Gemini API
+app.include_router(gemini.router)
 
 
 try:
