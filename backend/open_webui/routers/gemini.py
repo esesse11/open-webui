@@ -1,6 +1,6 @@
 """
 Google Gemini API Router
-Supports: Gemini 1.5 Pro, Gemini 1.5 Flash, and other Google models
+Supports: Gemini 3 Pro, Gemini 1.5 Pro, Gemini 1.5 Flash, and other Google models
 """
 
 import os
@@ -141,9 +141,14 @@ async def gemini_list_models():
             return {
                 "models": [
                     {
+                        "name": "models/gemini-3-pro",
+                        "displayName": "Gemini 3 Pro",
+                        "description": "Latest and most capable Gemini model with advanced reasoning (1M token context)"
+                    },
+                    {
                         "name": "models/gemini-1.5-pro",
                         "displayName": "Gemini 1.5 Pro",
-                        "description": "Most capable Gemini model"
+                        "description": "Most capable Gemini model with 1M token context"
                     },
                     {
                         "name": "models/gemini-1.5-flash",

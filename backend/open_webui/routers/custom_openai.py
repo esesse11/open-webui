@@ -1,6 +1,6 @@
 """
 Custom OpenAI Compatible API Router
-Supports: Groq, LMStudio, and other OpenAI-compatible services
+Supports: Groq, LMStudio, NanoBanana2, and other OpenAI-compatible services
 """
 
 import os
@@ -90,7 +90,8 @@ async def custom_list_models():
                 "data": [
                     {"id": "gpt-4", "object": "model", "owned_by": "openai"},
                     {"id": "gpt-3.5-turbo", "object": "model", "owned_by": "openai"},
-                    {"id": "text-davinci-003", "object": "model", "owned_by": "openai"}
+                    {"id": "text-davinci-003", "object": "model", "owned_by": "openai"},
+                    {"id": "nano-banana-2", "object": "model", "owned_by": "google", "description": "NanoBanana 2 - High-quality image generation with Gemini 3 Pro backend"}
                 ]
             }
 
