@@ -91,9 +91,10 @@ async def get_all_models(request, refresh: bool = False, user: UserModel = None)
     # deep copy the base models to avoid modifying the original list
     models = [model.copy() for model in base_models]
 
-    # If there are no models, return an empty list
-    if len(models) == 0:
-        return []
+    # Note: Don't return empty list here - we need to add custom DB models
+    # even if base_models is empty
+    # if len(models) == 0:
+    #     return []
 
     # Add arena models
     if request.app.state.config.ENABLE_EVALUATION_ARENA_MODELS:
