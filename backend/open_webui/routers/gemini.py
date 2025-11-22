@@ -26,6 +26,9 @@ class GeminiRequest(BaseModel):
     temperature: Optional[float] = 0.7
     max_output_tokens: Optional[int] = None
     stream: Optional[bool] = False
+    top_p: Optional[float] = None
+    top_k: Optional[int] = None
+    system_prompt: Optional[str] = None
 
 @router.post("/chat/completions")
 async def gemini_chat_completion(request: GeminiRequest):
@@ -69,13 +72,28 @@ async def gemini_chat_completion(request: GeminiRequest):
                 "parts": [{"text": msg.content}]
             })
 
+        # Build generation config with optional parameters
+        generation_config = {
+            "temperature": request.temperature,
+            "maxOutputTokens": request.max_output_tokens or 2048,
+        }
+
+        # Add optional parameters if provided
+        if request.top_p is not None:
+            generation_config["topP"] = request.top_p
+        if request.top_k is not None:
+            generation_config["topK"] = request.top_k
+
         payload = {
             "contents": contents,
-            "generationConfig": {
-                "temperature": request.temperature,
-                "maxOutputTokens": request.max_output_tokens or 2048,
-            }
+            "generationConfig": generation_config,
         }
+
+        # Add system instruction if provided
+        if request.system_prompt:
+            payload["systemInstruction"] = {
+                "parts": [{"text": request.system_prompt}]
+            }
 
         model_name = request.model
         if not model_name.startswith("models/"):
@@ -90,8 +108,14 @@ async def gemini_chat_completion(request: GeminiRequest):
             ) as response:
                 if response.status != 200:
                     error_data = await response.text()
-                    logger.error(f"Gemini API error: {error_data}")
-                    raise HTTPException(status_code=response.status, detail=error_data)
+                    error_detail = {
+                        "status": response.status,
+                        "message": error_data,
+                        "model": request.model,
+                        "endpoint": "gemini"
+                    }
+                    logger.error(f"Gemini API error [{response.status}]: {error_data}")
+                    raise HTTPException(status_code=response.status, detail=error_detail)
 
                 data = await response.json()
 

@@ -23,6 +23,11 @@ class ChatCompletionRequest(BaseModel):
     temperature: Optional[float] = 0.7
     max_tokens: Optional[int] = None
     stream: Optional[bool] = False
+    top_p: Optional[float] = None
+    top_k: Optional[int] = None
+    frequency_penalty: Optional[float] = None
+    presence_penalty: Optional[float] = None
+    stop: Optional[List[str]] = None
 
 @router.post("/chat/completions")
 async def custom_chat_completion(request: ChatCompletionRequest):
@@ -45,13 +50,29 @@ async def custom_chat_completion(request: ChatCompletionRequest):
             "Content-Type": "application/json"
         }
 
+        # Build payload with base parameters
         payload = {
             "model": request.model,
             "messages": [{"role": m.role, "content": m.content} for m in request.messages],
-            "temperature": request.temperature,
-            "max_tokens": request.max_tokens,
-            "stream": request.stream
         }
+
+        # Add optional parameters only if provided (not None)
+        if request.temperature is not None:
+            payload["temperature"] = request.temperature
+        if request.max_tokens is not None:
+            payload["max_tokens"] = request.max_tokens
+        if request.stream is not None:
+            payload["stream"] = request.stream
+        if request.top_p is not None:
+            payload["top_p"] = request.top_p
+        if request.top_k is not None:
+            payload["top_k"] = request.top_k
+        if request.frequency_penalty is not None:
+            payload["frequency_penalty"] = request.frequency_penalty
+        if request.presence_penalty is not None:
+            payload["presence_penalty"] = request.presence_penalty
+        if request.stop is not None:
+            payload["stop"] = request.stop
 
         async with aiohttp.ClientSession() as session:
             url = f"{api_base}/chat/completions"
@@ -63,7 +84,15 @@ async def custom_chat_completion(request: ChatCompletionRequest):
             ) as response:
                 if response.status != 200:
                     error_data = await response.text()
-                    raise HTTPException(status_code=response.status, detail=error_data)
+                    error_detail = {
+                        "status": response.status,
+                        "message": error_data,
+                        "model": request.model,
+                        "endpoint": "custom",
+                        "api_base": api_base
+                    }
+                    logger.error(f"Custom API error [{response.status}]: {error_data}")
+                    raise HTTPException(status_code=response.status, detail=error_detail)
 
                 return await response.json()
 
