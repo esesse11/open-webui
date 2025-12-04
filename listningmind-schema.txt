@@ -1,0 +1,3791 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "listeningmind-mcp-api - PROFESSIONAL Plan",
+    "description": "\nPlayground: <https://listeningmind-mcp-api.ascentlab.io/professional/playground>\n\nDocs: <https://listeningmind-mcp-api.ascentlab.io/professional/docs>\n\nHomepage: <https://www.listeningmind.com>\n\nAvailable for `PROFESSIONAL` plan users.\n\nAllowed endpoints: [**keyword, path_finder, cluster, google_trend, google_serp, google_ads**]\n        ",
+    "version": "v1.0.3"
+  },
+  "servers": [
+    {
+      "url": "https://listeningmind-mcp-api.ascentlab.io"
+    }
+  ],
+  "paths": {
+    "/keyword": {
+      "post": {
+        "tags": [
+          "Keyword"
+        ],
+        "summary": "키워드 정보 조회",
+        "description": "IntentFinder 키워드 상세 정보 조회",
+        "operationId": "keyword_info",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KeywordParameters"
+              },
+              "examples": {
+                "minimum example": {
+                  "value": {
+                    "keywords": [
+                      "냉장고",
+                      "자전거"
+                    ],
+                    "gl": "kr"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeywordResponse"
+                },
+                "example": {
+                  "result": "OK",
+                  "reason": "SUCCESS",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.1",
+                  "request_at": "2025-10-20T04:09:46.139Z",
+                  "request_detail": {
+                    "keywords": [
+                      "냉장고"
+                    ],
+                    "gl": "kr"
+                  },
+                  "cost": 1,
+                  "remain_credits": 99999,
+                  "data": {
+                    "infos": [
+                      {
+                        "keyword": "냉장고",
+                        "ads_metrics": {
+                          "competition": "HIGH",
+                          "competition_index": 99,
+                          "cpc": 0.56,
+                          "low_bid_micros": 126730,
+                          "high_bid_micros": 1202571,
+                          "volume_avg": 356033,
+                          "volume_total": 3158800,
+                          "volume_trend": 0.24,
+                          "gg_volume_avg": 98166,
+                          "gg_volume_total": 614700,
+                          "gg_volume_trend": 0,
+                          "nv_volume_avg": 257866,
+                          "nv_volume_total": 2544100,
+                          "nv_volume_trend": 0.29
+                        },
+                        "features": {
+                          "f_images": 2,
+                          "f_organic_results": 17,
+                          "f_people_also_search_for": 1,
+                          "f_related_searches": 1,
+                          "f_video_results": 1
+                        },
+                        "intents": {
+                          "i": 1,
+                          "n": 0,
+                          "c": 0,
+                          "t": 1
+                        },
+                        "demography": {
+                          "m_gender": 0,
+                          "f_gender": 0,
+                          "a0": 0,
+                          "a13": 0,
+                          "a20": 0,
+                          "a25": 0,
+                          "a30": 0,
+                          "a40": 0,
+                          "a50": 0,
+                          "m_gender_ratio": 43.65,
+                          "f_gender_ratio": 56.34,
+                          "a0_ratio": 0.09,
+                          "a13_ratio": 1.2,
+                          "a20_ratio": 2.67,
+                          "a25_ratio": 7.54,
+                          "a30_ratio": 24.55,
+                          "a40_ratio": 34.97,
+                          "a50_ratio": 28.94
+                        },
+                        "monthly_volume": [
+                          {
+                            "month": "2021-09",
+                            "gg": 22200,
+                            "nv": 371300,
+                            "total": 393500
+                          },
+                          {
+                            "month": "2021-10",
+                            "gg": 22200,
+                            "nv": 336100,
+                            "total": 358300
+                          },
+                          {
+                            "month": "2021-11",
+                            "gg": 22200,
+                            "nv": 285700,
+                            "total": 307900
+                          },
+                          {
+                            "month": "2021-12",
+                            "gg": 18100,
+                            "nv": 270800,
+                            "total": 288900
+                          },
+                          {
+                            "month": "2022-01",
+                            "gg": 22200,
+                            "nv": 301000,
+                            "total": 323200
+                          },
+                          {
+                            "month": "2022-02",
+                            "gg": 18100,
+                            "nv": 302400,
+                            "total": 320500
+                          },
+                          {
+                            "month": "2022-03",
+                            "gg": 22200,
+                            "nv": 313200,
+                            "total": 335400
+                          },
+                          {
+                            "month": "2022-04",
+                            "gg": 22200,
+                            "nv": 301800,
+                            "total": 324000
+                          },
+                          {
+                            "month": "2022-05",
+                            "gg": 22200,
+                            "nv": 323900,
+                            "total": 346100
+                          },
+                          {
+                            "month": "2022-06",
+                            "gg": 22200,
+                            "nv": 369500,
+                            "total": 391700
+                          },
+                          {
+                            "month": "2022-07",
+                            "gg": 27100,
+                            "nv": 423800,
+                            "total": 450900
+                          },
+                          {
+                            "month": "2022-08",
+                            "gg": 27100,
+                            "nv": 392700,
+                            "total": 419800
+                          },
+                          {
+                            "month": "2022-09",
+                            "gg": 22200,
+                            "nv": 301500,
+                            "total": 323700
+                          },
+                          {
+                            "month": "2022-10",
+                            "gg": 22200,
+                            "nv": 277400,
+                            "total": 299600
+                          },
+                          {
+                            "month": "2022-11",
+                            "gg": 22200,
+                            "nv": 271500,
+                            "total": 293700
+                          },
+                          {
+                            "month": "2022-12",
+                            "gg": 18100,
+                            "nv": 251400,
+                            "total": 269500
+                          },
+                          {
+                            "month": "2023-01",
+                            "gg": 22200,
+                            "nv": 264100,
+                            "total": 286300
+                          },
+                          {
+                            "month": "2023-02",
+                            "gg": 22200,
+                            "nv": 248600,
+                            "total": 270800
+                          },
+                          {
+                            "month": "2023-03",
+                            "gg": 33100,
+                            "nv": 277600,
+                            "total": 310700
+                          },
+                          {
+                            "month": "2023-04",
+                            "gg": 27100,
+                            "nv": 234200,
+                            "total": 261300
+                          },
+                          {
+                            "month": "2023-05",
+                            "gg": 33100,
+                            "nv": 282600,
+                            "total": 315700
+                          },
+                          {
+                            "month": "2023-06",
+                            "gg": 33100,
+                            "nv": 287000,
+                            "total": 320100
+                          },
+                          {
+                            "month": "2023-07",
+                            "gg": 27100,
+                            "nv": 316800,
+                            "total": 343900
+                          },
+                          {
+                            "month": "2023-08",
+                            "gg": 27100,
+                            "nv": 308000,
+                            "total": 335100
+                          },
+                          {
+                            "month": "2023-09",
+                            "gg": 27100,
+                            "nv": 241000,
+                            "total": 268100
+                          },
+                          {
+                            "month": "2023-10",
+                            "gg": 74000,
+                            "nv": 227100,
+                            "total": 301100
+                          },
+                          {
+                            "month": "2023-11",
+                            "gg": 33100,
+                            "nv": 224000,
+                            "total": 257100
+                          },
+                          {
+                            "month": "2023-12",
+                            "gg": 22200,
+                            "nv": 209100,
+                            "total": 231300
+                          },
+                          {
+                            "month": "2024-01",
+                            "gg": 27100,
+                            "nv": 227400,
+                            "total": 254500
+                          },
+                          {
+                            "month": "2024-02",
+                            "gg": 22200,
+                            "nv": 211800,
+                            "total": 234000
+                          },
+                          {
+                            "month": "2024-03",
+                            "gg": 33100,
+                            "nv": 218300,
+                            "total": 251400
+                          },
+                          {
+                            "month": "2024-04",
+                            "gg": 27100,
+                            "nv": 219000,
+                            "total": 246100
+                          },
+                          {
+                            "month": "2024-05",
+                            "gg": 40500,
+                            "nv": 238600,
+                            "total": 279100
+                          },
+                          {
+                            "month": "2024-06",
+                            "gg": 40500,
+                            "nv": 259700,
+                            "total": 300200
+                          },
+                          {
+                            "month": "2024-07",
+                            "gg": 33100,
+                            "nv": 291300,
+                            "total": 324400
+                          },
+                          {
+                            "month": "2024-08",
+                            "gg": 33100,
+                            "nv": 271600,
+                            "total": 304700
+                          },
+                          {
+                            "month": "2024-09",
+                            "gg": 27100,
+                            "nv": 228800,
+                            "total": 255900
+                          },
+                          {
+                            "month": "2024-10",
+                            "gg": 33100,
+                            "nv": 200100,
+                            "total": 233200
+                          },
+                          {
+                            "month": "2024-11",
+                            "gg": 33100,
+                            "nv": 178100,
+                            "total": 211200
+                          },
+                          {
+                            "month": "2024-12",
+                            "gg": 40500,
+                            "nv": 171100,
+                            "total": 211600
+                          },
+                          {
+                            "month": "2025-01",
+                            "gg": 27100,
+                            "nv": 204900,
+                            "total": 232000
+                          },
+                          {
+                            "month": "2025-02",
+                            "gg": 22200,
+                            "nv": 191700,
+                            "total": 213900
+                          },
+                          {
+                            "month": "2025-03",
+                            "gg": 27100,
+                            "nv": 210700,
+                            "total": 237800
+                          },
+                          {
+                            "month": "2025-04",
+                            "gg": 60500,
+                            "nv": 183700,
+                            "total": 244200
+                          },
+                          {
+                            "month": "2025-05",
+                            "gg": 49500,
+                            "nv": 201400,
+                            "total": 250900
+                          },
+                          {
+                            "month": "2025-06",
+                            "gg": 135000,
+                            "nv": 249700,
+                            "total": 384700
+                          },
+                          {
+                            "month": "2025-07",
+                            "gg": 110000,
+                            "nv": 262100,
+                            "total": 372100
+                          },
+                          {
+                            "month": "2025-08",
+                            "gg": 49500,
+                            "nv": 261800,
+                            "total": 311300
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response401Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Invalid API Key",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response402Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Payment Required",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z",
+                  "request_detail": {
+                    "keywords": [
+                      "냉장고",
+                      "자전거"
+                    ],
+                    "gl": "kr"
+                  },
+                  "cost": 2,
+                  "remain_credits": 1
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response403Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Not authenticated",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response422Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Validation Error",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z",
+                  "detail": [
+                    {
+                      "message": "Input should be a valid list",
+                      "type": "list_type"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response500Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Internal Server Error",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "x-openai-isConsequential": false
+      }
+    },
+    "/keyword/search": {
+      "post": {
+        "tags": [
+          "Keyword"
+        ],
+        "summary": "연관 키워드 검색",
+        "description": "IntentFinder 요청 키워드의 연관(포함) 키워드 조회(월평균 검색량 기준 정렬)",
+        "operationId": "keyword_search",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KeywordSearchParameters"
+              },
+              "examples": {
+                "minimum example": {
+                  "value": {
+                    "keywords": [
+                      "냉장고",
+                      "자전거"
+                    ],
+                    "gl": "kr"
+                  }
+                },
+                "maximum example": {
+                  "value": {
+                    "keywords": [
+                      "냉장고",
+                      "자전거"
+                    ],
+                    "gl": "kr",
+                    "volume_threshold": 100,
+                    "limit": 100
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KeywordSearchResponse"
+                },
+                "example": {
+                  "result": "OK",
+                  "reason": "SUCCESS",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.1",
+                  "request_at": "2025-10-20T04:07:30.214Z",
+                  "request_detail": {
+                    "keywords": [
+                      "자전거",
+                      "냉장고"
+                    ],
+                    "gl": "kr",
+                    "volume_threshold": 100,
+                    "limit": 10
+                  },
+                  "cost": 1,
+                  "remain_credits": 99999,
+                  "data": [
+                    "냉장고",
+                    "전기자전거",
+                    "자전거",
+                    "냉장고를 부탁해",
+                    "픽시 자전거",
+                    "로드 자전거",
+                    "실내 자전거",
+                    "김치냉장고",
+                    "lg 냉장고",
+                    "삼성 냉장고"
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response401Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Invalid API Key",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response402Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Payment Required",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z",
+                  "request_detail": {
+                    "keywords": [
+                      "냉장고",
+                      "자전거"
+                    ],
+                    "gl": "kr"
+                  },
+                  "cost": 2,
+                  "remain_credits": 1
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response403Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Not authenticated",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response422Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Validation Error",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z",
+                  "detail": [
+                    {
+                      "message": "Input should be a valid list",
+                      "type": "list_type"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response500Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Internal Server Error",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "x-openai-isConsequential": false
+      }
+    },
+    "/cluster": {
+      "post": {
+        "tags": [
+          "Cluster"
+        ],
+        "summary": "키워드 관계 정보 조회",
+        "description": "ClusterFinder 소비자 행동 기반 그룹(클러스터링) 및 관계 정보 조회",
+        "operationId": "cluster_finder",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClusterParameters"
+              },
+              "examples": {
+                "minimum example": {
+                  "value": {
+                    "keyword": "냉장고",
+                    "gl": "kr"
+                  }
+                },
+                "maximum example": {
+                  "value": {
+                    "keyword": "냉장고",
+                    "gl": "kr",
+                    "time_point": "curr",
+                    "hop": 2,
+                    "orientation": "UNDIRECTED",
+                    "limit": 500,
+                    "data_type": "all"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterResponse"
+                },
+                "example": {
+                  "result": "OK",
+                  "reason": "SUCCESS",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.1",
+                  "request_at": "2025-10-20T04:09:08.201Z",
+                  "request_detail": {
+                    "keyword": "냉장고",
+                    "gl": "kr",
+                    "time_point": "curr",
+                    "limit": 10,
+                    "hop": 2,
+                    "orientation": "UNDIRECTED",
+                    "data_type": "all"
+                  },
+                  "cost": 1,
+                  "remain_credits": 99999,
+                  "data": {
+                    "rels": [
+                      [
+                        "냉장고",
+                        "lg 냉장고"
+                      ],
+                      [
+                        "lg 냉장고",
+                        "lg 냉장고 오브제"
+                      ],
+                      [
+                        "lg 냉장고",
+                        "lg 냉장고 1등급"
+                      ],
+                      [
+                        "lg 냉장고",
+                        "lg 냉장고 2도어"
+                      ],
+                      [
+                        "lg 냉장고",
+                        "lg냉장고 싸게 사는법"
+                      ],
+                      [
+                        "lg 냉장고",
+                        "lg 냉장고 4도어"
+                      ],
+                      [
+                        "m875svv582s",
+                        "lg 냉장고"
+                      ],
+                      [
+                        "엘지 슬림냉장고",
+                        "lg 냉장고"
+                      ],
+                      [
+                        "세상에서 가장 싼 냉장고",
+                        "lg 냉장고"
+                      ],
+                      [
+                        "lg 냉장고 비스포크",
+                        "lg 냉장고"
+                      ]
+                    ],
+                    "communities": {
+                      "0": [
+                        "냉장고",
+                        "lg 냉장고",
+                        "lg 냉장고 1등급",
+                        "lg 냉장고 2도어",
+                        "lg냉장고 싸게 사는법",
+                        "m875svv582s",
+                        "세상에서 가장 싼 냉장고",
+                        "lg 냉장고 비스포크"
+                      ],
+                      "1": [
+                        "lg 냉장고 오브제"
+                      ],
+                      "2": [
+                        "lg 냉장고 4도어"
+                      ],
+                      "3": [
+                        "엘지 슬림냉장고"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response401Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Invalid API Key",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response402Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Payment Required",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z",
+                  "request_detail": {
+                    "keywords": [
+                      "냉장고",
+                      "자전거"
+                    ],
+                    "gl": "kr"
+                  },
+                  "cost": 2,
+                  "remain_credits": 1
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response403Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Not authenticated",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response422Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Validation Error",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z",
+                  "detail": [
+                    {
+                      "message": "Input should be a valid list",
+                      "type": "list_type"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response500Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Internal Server Error",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "x-openai-isConsequential": false
+      }
+    },
+    "/path_finder": {
+      "post": {
+        "tags": [
+          "PathFinder"
+        ],
+        "summary": "키워드 검색 경로 분석",
+        "description": "PathFinder 소비자 행동 기반 검색 경로 분석",
+        "operationId": "path_finder",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PathFinderParameters"
+              },
+              "examples": {
+                "minimum example": {
+                  "value": {
+                    "keyword": "냉장고",
+                    "gl": "kr"
+                  }
+                },
+                "maximum example": {
+                  "value": {
+                    "keyword": "냉장고",
+                    "gl": "kr",
+                    "time_point": "curr",
+                    "limit": 300
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PathFinderResponse"
+                },
+                "example": {
+                  "result": "OK",
+                  "reason": "SUCCESS",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.1",
+                  "request_at": "2025-10-20T04:02:25.906Z",
+                  "request_detail": {
+                    "keyword": "냉장고",
+                    "gl": "kr",
+                    "time_point": "curr",
+                    "limit": 10
+                  },
+                  "cost": 16,
+                  "remain_credits": 99999,
+                  "data": {
+                    "result": {
+                      "paths": [
+                        [
+                          "냉장고",
+                          "김치냉장고",
+                          "김치냉장고 추천"
+                        ],
+                        [
+                          "냉장고",
+                          "김치냉장고",
+                          "소형 김치냉장고"
+                        ],
+                        [
+                          "냉장고",
+                          "김치냉장고",
+                          "삼성 김치냉장고"
+                        ],
+                        [
+                          "냉장고",
+                          "김치냉장고",
+                          "스탠드형 김치냉장고"
+                        ],
+                        [
+                          "냉장고",
+                          "김치냉장고",
+                          "엘지 김치냉장고 스탠드형"
+                        ],
+                        [
+                          "냉장고",
+                          "김치냉장고",
+                          "딤채 김치냉장고 가격"
+                        ],
+                        [
+                          "냉장고",
+                          "김치냉장고",
+                          "엘지 김치냉장고 추천"
+                        ],
+                        [
+                          "냉장고",
+                          "김치냉장고",
+                          "김치냉장고 뚜껑형"
+                        ],
+                        [
+                          "냉장고",
+                          "김치냉장고",
+                          "딤채 김치냉장고 추천"
+                        ],
+                        [
+                          "냉장고",
+                          "김치냉장고",
+                          "삼성 김치냉장고 종류"
+                        ],
+                        [
+                          "온장고",
+                          "온장고 뜻",
+                          "냉장고"
+                        ],
+                        [
+                          "lg 냉동고",
+                          "실험실 냉동고",
+                          "냉장고"
+                        ]
+                      ],
+                      "keyword": "냉장고"
+                    },
+                    "status": "OK",
+                    "reason": "SUCCESS"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response401Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Invalid API Key",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response402Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Payment Required",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z",
+                  "request_detail": {
+                    "keywords": [
+                      "냉장고",
+                      "자전거"
+                    ],
+                    "gl": "kr"
+                  },
+                  "cost": 2,
+                  "remain_credits": 1
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response403Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Not authenticated",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response422Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Validation Error",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z",
+                  "detail": [
+                    {
+                      "message": "Input should be a valid list",
+                      "type": "list_type"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response500Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Internal Server Error",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "x-openai-isConsequential": false
+      }
+    },
+    "/google_ads": {
+      "post": {
+        "tags": [
+          "GoogleAds"
+        ],
+        "summary": "Google Ads 수집",
+        "description": "실시간 Google 검색량(Ads) 수집",
+        "operationId": "google_ads",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GoogleAdsParameters"
+              },
+              "examples": {
+                "minimum example": {
+                  "value": {
+                    "keywords": [
+                      "냉장고"
+                    ],
+                    "gl": "kr",
+                    "location": "South Korea"
+                  }
+                },
+                "maximum example": {
+                  "value": {
+                    "keywords": [
+                      "냉장고",
+                      "자전거"
+                    ],
+                    "gl": "kr",
+                    "year_range": 4,
+                    "location": "South Korea"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleAdsResponse"
+                },
+                "example": {
+                  "result": "OK",
+                  "reason": "SUCCESS",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.1",
+                  "request_at": "2025-10-20T04:06:13.967Z",
+                  "request_detail": {
+                    "keywords": [
+                      "냉장고"
+                    ],
+                    "gl": "kr",
+                    "year_range": 1,
+                    "location": "South Korea"
+                  },
+                  "cost": 1,
+                  "remain_credits": 99999,
+                  "data": [
+                    {
+                      "keyword": "냉장고",
+                      "gl": "kr",
+                      "location": "South Korea",
+                      "hl": "ko",
+                      "year_range": 1,
+                      "usage_id": "listeningmind-mcp-api",
+                      "group_id": "kr+South Korea+ko+1",
+                      "source": "google_ads",
+                      "normalized_keyword": "냉장고",
+                      "hist_metrics": {
+                        "keywordMetrics": {
+                          "competition": "HIGH",
+                          "monthlySearchVolumes": [
+                            {
+                              "month": "SEPTEMBER",
+                              "year": "2024",
+                              "monthlySearches": "27100"
+                            },
+                            {
+                              "month": "OCTOBER",
+                              "year": "2024",
+                              "monthlySearches": "33100"
+                            },
+                            {
+                              "month": "NOVEMBER",
+                              "year": "2024",
+                              "monthlySearches": "33100"
+                            },
+                            {
+                              "month": "DECEMBER",
+                              "year": "2024",
+                              "monthlySearches": "40500"
+                            },
+                            {
+                              "month": "JANUARY",
+                              "year": "2025",
+                              "monthlySearches": "27100"
+                            },
+                            {
+                              "month": "FEBRUARY",
+                              "year": "2025",
+                              "monthlySearches": "22200"
+                            },
+                            {
+                              "month": "MARCH",
+                              "year": "2025",
+                              "monthlySearches": "27100"
+                            },
+                            {
+                              "month": "APRIL",
+                              "year": "2025",
+                              "monthlySearches": "60500"
+                            },
+                            {
+                              "month": "MAY",
+                              "year": "2025",
+                              "monthlySearches": "49500"
+                            },
+                            {
+                              "month": "JUNE",
+                              "year": "2025",
+                              "monthlySearches": "135000"
+                            },
+                            {
+                              "month": "JULY",
+                              "year": "2025",
+                              "monthlySearches": "110000"
+                            },
+                            {
+                              "month": "AUGUST",
+                              "year": "2025",
+                              "monthlySearches": "49500"
+                            }
+                          ],
+                          "avgMonthlySearches": "49500",
+                          "competitionIndex": "99",
+                          "lowTopOfPageBidMicros": "126730",
+                          "highTopOfPageBidMicros": "1202571",
+                          "averageCpcMicros": "574125"
+                        },
+                        "searchQuery": "냉장고"
+                      },
+                      "avg_cpc": 0.57,
+                      "month": "202508",
+                      "collected_at": "2025-10-20T04:06:14.043380+00:00",
+                      "location_code": 2410,
+                      "language_code": 1012
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response401Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Invalid API Key",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response402Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Payment Required",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z",
+                  "request_detail": {
+                    "keywords": [
+                      "냉장고",
+                      "자전거"
+                    ],
+                    "gl": "kr"
+                  },
+                  "cost": 2,
+                  "remain_credits": 1
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response403Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Not authenticated",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response422Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Validation Error",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z",
+                  "detail": [
+                    {
+                      "message": "Input should be a valid list",
+                      "type": "list_type"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response500Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Internal Server Error",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "x-openai-isConsequential": false
+      }
+    },
+    "/google_ads/location": {
+      "get": {
+        "tags": [
+          "GoogleAds"
+        ],
+        "summary": "Google Ads location 목록 조회",
+        "operationId": "google_ads_location",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "x-openai-isConsequential": false
+      }
+    },
+    "/google_serp": {
+      "post": {
+        "tags": [
+          "GoogleSerp"
+        ],
+        "summary": "Google SERP 수집",
+        "description": "실시간 Google 검색 결과(SERP) 수집",
+        "operationId": "google_serp",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GoogleSerpParameters"
+              },
+              "examples": {
+                "minimum example": {
+                  "value": {
+                    "keyword": "냉장고",
+                    "gl": "kr"
+                  }
+                },
+                "maximum example": {
+                  "value": {
+                    "keyword": "냉장고",
+                    "gl": "kr",
+                    "num": 20,
+                    "device": "mobile"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleSerpResponse"
+                },
+                "example": {
+                  "result": "OK",
+                  "reason": "SUCCESS",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.1",
+                  "request_at": "2025-10-20T04:27:19.938Z",
+                  "request_detail": {
+                    "keyword": "냉장고",
+                    "gl": "kr",
+                    "num": 10,
+                    "device": "mobile"
+                  },
+                  "cost": 1,
+                  "remain_credits": 99999,
+                  "data": [
+                    {
+                      "sequence": 1,
+                      "type": "featured_snippet",
+                      "cards": [
+                        {
+                          "_func": "thumbnails",
+                          "ved": {
+                            "type": 14054
+                          }
+                        },
+                        {
+                          "type": "organic_results",
+                          "ved": {
+                            "type": 22
+                          },
+                          "description": "냉장고(冷藏庫)는 식품이나 약품 등을 부패하지 않도록 저온에서 보관하거나 또는 적정 사용온도를 유지시키기 위한 장치이다.6일 전",
+                          "emphasis": [
+                            "식품이나 약품 등을 부패하지 않도록 저온에서 보관하거나 또는 적정 사용온도를 유지시키기 위한 장치"
+                          ],
+                          "title": "냉장고 - 나무위키",
+                          "url": "https://namu.wiki/w/%EB%83%89%EC%9E%A5%EA%B3%A0"
+                        }
+                      ]
+                    },
+                    {
+                      "sequence": 2,
+                      "type": "organic_results",
+                      "position": 1,
+                      "ved": {
+                        "type": 22
+                      },
+                      "site_name": "prod.danawa.com",
+                      "title": "냉장고 : 다나와 가격비교",
+                      "url": "https://prod.danawa.com/list/?cate=102110",
+                      "snippet": "양문형냉장고/4도어/총용량: 905L/냉장: 539L/냉동: 366L/2등급(25.03 기준)/아이스메이커: 트레이/큐브(각얼음)/재질: 에센셜(메탈)/ ...",
+                      "refinements": [
+                        {
+                          "text": "냉장고세트"
+                        },
+                        {
+                          "text": "업소용냉장고"
+                        },
+                        {
+                          "text": "제빙기"
+                        },
+                        {
+                          "text": "다용도/쌀냉장고"
+                        }
+                      ],
+                      "thumbnail": {
+                        "type": "image",
+                        "url": "https://prod.danawa.com/list/?cate=102110",
+                        "alt": "냉장고(출처: prod.danawa.com)"
+                      }
+                    },
+                    {
+                      "sequence": 3,
+                      "type": "organic_results",
+                      "position": 2,
+                      "ved": {
+                        "type": 22
+                      },
+                      "site_name": "LG전자",
+                      "title": "냉장고",
+                      "url": "https://www.lge.co.kr/refrigerators",
+                      "snippet": "냉장고 · LG SIGNATURE · Fit & Max · 무드업 · 노크온 · 모던엣지 · 매직스페이스. 매직스페이스 · 설치가이드. LG 디오스 냉장고·김치냉장고 설치가이드 · 구매가이드.",
+                      "refinements": [
+                        {
+                          "text": "LG 모던엣지 냉장고 오브제..."
+                        },
+                        {
+                          "text": "전체 | LG전자"
+                        },
+                        {
+                          "text": "냉장고 세트"
+                        },
+                        {
+                          "text": "Lg signature 냉장고"
+                        },
+                        {
+                          "text": "LG 디오스 오브제컬렉션 매직..."
+                        },
+                        {
+                          "text": "LG 디오스 오브제컬렉션 얼음..."
+                        },
+                        {
+                          "text": "LG 디오스 오브제컬렉션 노크..."
+                        }
+                      ]
+                    },
+                    {
+                      "sequence": 4,
+                      "type": "organic_results",
+                      "position": 3,
+                      "ved": {
+                        "type": 22
+                      },
+                      "site_name": "samsung.com",
+                      "title": "냉장고 | Samsung 대한민국",
+                      "url": "https://www.samsung.com/sec/refrigerators/all-refrigerators/",
+                      "snippet": "삼성 냉장고에 대한 모든 궁금증을 해결하세요. 디자인과 기능, 사용 방법 등을 한눈에 비교하고 확인할 수 있어 제품 선택이 한결 쉬워집니다.",
+                      "refinements": [
+                        {
+                          "text": "양문형 냉장고 651L"
+                        },
+                        {
+                          "text": "Bespoke AI 냉장고 4도어 905L"
+                        },
+                        {
+                          "text": "Bespoke AI 냉장고 4도어 키친..."
+                        },
+                        {
+                          "text": "김치냉장고"
+                        },
+                        {
+                          "text": "Bespoke AI 하이브리드 4도어..."
+                        },
+                        {
+                          "text": "RM70F63R2XJ"
+                        },
+                        {
+                          "text": "RR40C79057801"
+                        }
+                      ],
+                      "thumbnail": {
+                        "type": "image",
+                        "url": "https://www.samsung.com/sec/refrigerators/all-refrigerators/",
+                        "alt": "냉장고(출처: www.samsung.com)"
+                      }
+                    },
+                    {
+                      "sequence": 5,
+                      "type": "images",
+                      "ved": {
+                        "type": 1736
+                      },
+                      "grid": [
+                        {
+                          "attrid": "images universal",
+                          "alt": "롯데하이마트 | 4도어 일반 냉장고 HRF-SN470SM (470L) / 하이메이드 ...",
+                          "landing_url": "https://www.e-himart.co.kr/app/goods/goodsDetail?goodsNo=0018322463",
+                          "source": "롯데하이마트"
+                        },
+                        {
+                          "attrid": "images universal",
+                          "alt": "냉장고 - 나무위키",
+                          "landing_url": "https://namu.wiki/w/%EB%83%89%EC%9E%A5%EA%B3%A0",
+                          "source": "나무위키"
+                        },
+                        {
+                          "attrid": "images universal",
+                          "alt": "LG 일반냉장고",
+                          "landing_url": "https://www.lge.co.kr/refrigerators/b502w33",
+                          "source": "LG전자"
+                        },
+                        {
+                          "attrid": "images universal",
+                          "alt": "냉장고 615L | RT62A7049S9 | Samsung 대한민국",
+                          "landing_url": "https://www.samsungebiz.com/sohomall/refrigerators/top-mount-freezer-rt62a7049s9-n/RT62A7049S9",
+                          "source": "삼성"
+                        }
+                      ]
+                    },
+                    {
+                      "sequence": 6,
+                      "type": "video_results",
+                      "ved": {
+                        "type": 21807
+                      },
+                      "items": [
+                        {
+                          "title": "하루 10분으로 평생 정리 안해도 되는 주방 냉장고 만드는 노하우 (이지영 ...",
+                          "url": "https://www.youtube.com/watch?v=04lZLhw44u8",
+                          "source": "YouTube",
+                          "channel": "지식한상",
+                          "date": "1개월 전",
+                          "duration": "17:07"
+                        },
+                        {
+                          "title": "[냉장고를 부탁해] “같이 사는 분…” 아내라 부르기엔 아직 어색한 권율의 ...",
+                          "url": "https://www.youtube.com/watch?v=bscH8vnyGTE",
+                          "source": "YouTube",
+                          "channel": "JTBC Entertainment",
+                          "date": "15시간 전",
+                          "duration": "9:05"
+                        },
+                        {
+                          "title": "냉장고를 부탁해 45회 예고편 - 역대급 팀전의 결과는? (with. 권율&김재욱)",
+                          "url": "https://www.youtube.com/watch?v=l3pfVSOAyzs",
+                          "source": "YouTube",
+                          "channel": "JTBC Entertainment",
+                          "date": "15시간 전",
+                          "duration": "0:59"
+                        }
+                      ]
+                    },
+                    {
+                      "sequence": 7,
+                      "type": "people_also_search_for",
+                      "ved": {
+                        "type": 54107
+                      },
+                      "items": [
+                        {
+                          "query": "냉장고 영어"
+                        },
+                        {
+                          "query": "소형냉장고"
+                        },
+                        {
+                          "query": "LG 냉장고"
+                        },
+                        {
+                          "query": "냉장고 가격"
+                        },
+                        {
+                          "query": "삼성 냉장고"
+                        },
+                        {
+                          "query": "냉장고싼곳"
+                        }
+                      ]
+                    },
+                    {
+                      "sequence": 8,
+                      "type": "organic_results",
+                      "position": 4,
+                      "ved": {
+                        "type": 22
+                      },
+                      "site_name": "Daum",
+                      "title": "냉장고와 김치냉장고, 같지만 다른 이유",
+                      "url": "https://v.daum.net/v/20251019150147446",
+                      "snippet": "22시간 전 — 일반 냉장고는 냉매를 통해 생성된 온도가 낮은 바람을 보관함에 흐르게 해 온도를 낮추는 '간접 냉장'이라면 김치냉장고는 냉매가 흐르는 관을 촘촘히 ..."
+                    },
+                    {
+                      "sequence": 9,
+                      "type": "organic_results",
+                      "position": 5,
+                      "ved": {
+                        "type": 22
+                      },
+                      "site_name": "쿠팡",
+                      "title": "냉장고",
+                      "url": "https://www.coupang.com/np/categories/403245",
+                      "snippet": "현재 쿠팡에서 판매하고 있는 냉장고의 종류에는 양문형 냉장고, 일반형 냉장고, 4도어 냉장고, 이동식 냉장고, 미니 냉장고, 업소용 냉장고, 김 ...",
+                      "refinements": [
+                        {
+                          "text": "1도어 냉장고"
+                        },
+                        {
+                          "text": "2도어 냉장고"
+                        },
+                        {
+                          "text": "3/4도어냉장고"
+                        },
+                        {
+                          "text": "[색상선택형] LG전자 디오스..."
+                        }
+                      ],
+                      "thumbnail": {
+                        "type": "image",
+                        "url": "https://www.coupang.com/np/categories/403245",
+                        "alt": "냉장고(출처: www.coupang.com)"
+                      }
+                    },
+                    {
+                      "sequence": 10,
+                      "type": "organic_results",
+                      "position": 6,
+                      "ved": {
+                        "type": 22
+                      },
+                      "site_name": "LG헬로렌탈",
+                      "title": "냉장고렌탈 가격비교 및 엘지냉장고렌탈, LG가전구독 할인 안내",
+                      "url": "https://rental.lghellovision.net/category/list?hgrnkCtgrSeq=3&subCtgrSeq=5&srsltid=AfmBOop6MBNYlVTu1xEmml8Kap7erknirZHCXzrqEyVEeCph97_rIaDq",
+                      "snippet": "업소용 냉장고 · LG · 삼성 · 루컴즈 · 헤르젠 · 제크롤 · 도메틱 · 리페르 · 엘바. 쿠오레. 용량. ~99L. 100~299L. 300~499L. 500~799L. ...",
+                      "thumbnail": {
+                        "type": "image",
+                        "url": "https://rental.lghellovision.net/category/list?hgrnkCtgrSeq=3&subCtgrSeq=5&srsltid=AfmBOop6MBNYlVTu1xEmml8Kap7erknirZHCXzrqEyVEeCph97_rIaDq",
+                        "alt": "냉장고(출처: rental.lghellovision.net)"
+                      }
+                    },
+                    {
+                      "sequence": 11,
+                      "type": "organic_results",
+                      "position": 7,
+                      "ved": {
+                        "type": 22
+                      },
+                      "site_name": "Wikipedia",
+                      "title": "냉장고 - 위키백과, 우리 모두의 백과사전",
+                      "url": "https://ko.wikipedia.org/wiki/%EB%83%89%EC%9E%A5%EA%B3%A0",
+                      "snippet": "냉장고(冷藏庫,영어: refrigerator, 문화어: 랭장고)는 식품이나 약품 등을 저온에서 신선하게 저장 · 보관하는 상자 모양의 기계 장치다.",
+                      "thumbnail": {
+                        "type": "image",
+                        "url": "https://ko.wikipedia.org/wiki/%EB%83%89%EC%9E%A5%EA%B3%A0",
+                        "alt": "냉장고(출처: ko.wikipedia.org)"
+                      }
+                    },
+                    {
+                      "sequence": 12,
+                      "type": "related_searches",
+                      "ved": {
+                        "type": 54107
+                      },
+                      "items": [
+                        {
+                          "query": "가정용 냉장고 가격"
+                        },
+                        {
+                          "query": "김치냉장고"
+                        },
+                        {
+                          "query": "삼성냉장고가격"
+                        },
+                        {
+                          "query": "냉장고 추천"
+                        },
+                        {
+                          "query": "엘지냉장고가격"
+                        },
+                        {
+                          "query": "비스포크 냉장고"
+                        }
+                      ]
+                    },
+                    {
+                      "sequence": 13,
+                      "type": "images",
+                      "ved": {
+                        "type": 1736
+                      },
+                      "grid": [
+                        {
+                          "attrid": "images universal",
+                          "alt": "LG SIGNATURE 상냉장고",
+                          "landing_url": "https://www.lge.co.kr/refrigerators/f904nd79e",
+                          "source": "LG전자"
+                        },
+                        {
+                          "attrid": "images universal",
+                          "alt": "Dacor 대한민국",
+                          "landing_url": "https://www.dacorkorea.com/products/refrigerators/t-type-refrigerator",
+                          "source": "| Dacor 대한민국"
+                        },
+                        {
+                          "attrid": "images universal",
+                          "alt": "냉장고 | Samsung 대한민국",
+                          "landing_url": "https://www.samsung.com/sec/refrigerators/all-refrigerators/",
+                          "source": "Samsung"
+                        },
+                        {
+                          "attrid": "images universal",
+                          "alt": "더함 냉장고 165L R165D1-MS1TM",
+                          "landing_url": "https://www.thehaam.kr/refrigerator/?idx=139",
+                          "source": "더함"
+                        }
+                      ]
+                    },
+                    {
+                      "sequence": 14,
+                      "type": "organic_results",
+                      "position": 8,
+                      "ved": {
+                        "type": 22
+                      },
+                      "site_name": "이마트몰",
+                      "title": "냉장고 - 추천•인기 상품, 이마트몰 - SSG",
+                      "url": "https://m-emart.ssg.com/search.ssg?query=%EB%83%89%EC%9E%A5%EA%B3%A0",
+                      "snippet": "이마트몰에서 냉장고 최저가 상품부터 냉장고 추천•인기 상품까지, 할인 가격으로 만나보세요!",
+                      "thumbnail": {
+                        "type": "image",
+                        "url": "https://m-emart.ssg.com/search.ssg?query=%EB%83%89%EC%9E%A5%EA%B3%A0",
+                        "alt": "냉장고(출처: m-emart.ssg.com)"
+                      }
+                    },
+                    {
+                      "sequence": 15,
+                      "type": "organic_results",
+                      "position": 9,
+                      "ved": {
+                        "type": 22
+                      },
+                      "site_name": "LG전자",
+                      "title": "우리 집에 맞는 냉장고 종류 찾기 | 라이프 | 스토리",
+                      "url": "https://www.lge.co.kr/story/life/thinq-discover-kitchen-035",
+                      "snippet": "우리 집에 맞는 냉장고 종류 찾기 · 얼음 정수기 냉장고. 줄여서 '얼정냉'이라고도 불러요. · 양문형 냉장고. 왼쪽은 냉동실, 오른쪽은 냉장실로 구성돼 있어요. · 일반형 ..."
+                    },
+                    {
+                      "sequence": 16,
+                      "type": "organic_results",
+                      "position": 10,
+                      "ved": {
+                        "type": 22
+                      },
+                      "site_name": "Midea",
+                      "title": "냉장고",
+                      "url": "https://www.midea.com/kr/refrigerators",
+                      "snippet": "냉장고. 자연의 신선함을 집으로 초대하여, 당신과 가족에게 자연 그대로의 상쾌하고 품격 있는 일상을 제공합니다. ... Smart⁺ 쿨링 마이디어 미트 시리즈는 외부와 내부 ..."
+                    },
+                    {
+                      "sequence": 17,
+                      "type": "organic_results",
+                      "position": 11,
+                      "ved": {
+                        "type": 22
+                      },
+                      "site_name": "모드비",
+                      "title": "냉장고",
+                      "url": "https://www.modevi.co.kr/front/product/category/3",
+                      "snippet": "냉각방식 · 감성적인 무드를 연출하는 세련된 실버메탈 · 빈틈 없이 신선함을 채워주는 파워쿨링 시스템 · 냉장실 속 독립된 스마트 보관실로 신 ...",
+                      "thumbnail": {
+                        "type": "image",
+                        "url": "https://www.modevi.co.kr/front/product/category/3",
+                        "alt": "냉장고(출처: www.modevi.co.kr)"
+                      }
+                    },
+                    {
+                      "sequence": 18,
+                      "type": "organic_results",
+                      "position": 12,
+                      "ved": {
+                        "type": 22
+                      },
+                      "site_name": "IKEA",
+                      "title": "냉장고",
+                      "url": "https://www.ikea.com/kr/ko/cat/fridges-freezers-20822/",
+                      "snippet": "거의 모든 IKEA 냉장고/냉동고에는 조절식 선반과 투명 서랍, 도어 수납공간이 있어 쉽게 정리 및 수납할 수 있습니다. 필요에 따라 공간을 ...",
+                      "thumbnail": {
+                        "type": "image",
+                        "url": "https://www.ikea.com/kr/ko/cat/fridges-freezers-20822/",
+                        "alt": "냉장고(출처: www.ikea.com)"
+                      }
+                    },
+                    {
+                      "sequence": 19,
+                      "type": "organic_results",
+                      "position": 13,
+                      "ved": {
+                        "type": 22
+                      },
+                      "site_name": "ohou.se",
+                      "title": "냉장고 | 오늘의집 쇼핑",
+                      "url": "https://ohou.se/store/category?category_id=14130000&srsltid=AfmBOopEWxAHpBvoEYCOtvspBLS7WfugvC_W8EhJA86Yiff-LWpx6Qn5",
+                      "snippet": "... 냉장고 · 양문형냉장고 · 미니냉장고 · 김치냉장고 · 와인냉장고 · 기타냉장고 · 냉동고. MD's PICK. 상품-썸네일-이미지. 캐리어. 모드비 412L ...",
+                      "thumbnail": {
+                        "type": "image",
+                        "url": "https://ohou.se/store/category?category_id=14130000&srsltid=AfmBOopEWxAHpBvoEYCOtvspBLS7WfugvC_W8EhJA86Yiff-LWpx6Qn5",
+                        "alt": "냉장고(출처: ohou.se)"
+                      }
+                    },
+                    {
+                      "sequence": 20,
+                      "type": "organic_results",
+                      "position": 14,
+                      "ved": {
+                        "type": 22
+                      },
+                      "site_name": "코스트코 온라인몰",
+                      "title": "냉장고 | 코스트코 코리아",
+                      "url": "https://www.costco.co.kr/Appliances/Refrigerators/c/cos_14.1",
+                      "snippet": "엘지 오브제 매직스페이스 냉장고 870L,글라스베이지 null null 배송 및 설치비 포함 · 엘지오브제 김치톡톡 FIT & MAX 324L -글라스베이지 ...",
+                      "thumbnail": {
+                        "type": "image",
+                        "url": "https://www.costco.co.kr/Appliances/Refrigerators/c/cos_14.1",
+                        "alt": "냉장고(출처: www.costco.co.kr)"
+                      }
+                    },
+                    {
+                      "sequence": 21,
+                      "type": "organic_results",
+                      "position": 15,
+                      "ved": {
+                        "type": 22
+                      },
+                      "site_name": "G마켓",
+                      "title": "냉장고 검색결과",
+                      "url": "https://m.gmarket.co.kr/n/search?keyword=%EB%83%89%EC%9E%A5%EA%B3%A0",
+                      "snippet": "시선집중 이 상품! 위니아상품명 위니아 클라쎄 냉장고 RKE952SIS5MEV(AK) 500리터 521L 일반 가정용 대용량 2도어. 740,000원. 무료 ...",
+                      "thumbnail": {
+                        "type": "image",
+                        "url": "https://m.gmarket.co.kr/n/search?keyword=%EB%83%89%EC%9E%A5%EA%B3%A0",
+                        "alt": "냉장고(출처: m.gmarket.co.kr)"
+                      }
+                    },
+                    {
+                      "sequence": 22,
+                      "type": "organic_results",
+                      "position": 16,
+                      "ved": {
+                        "type": 22
+                      },
+                      "site_name": "밀레 온라인몰",
+                      "title": "냉장고-냉동고 - 밀레코리아",
+                      "url": "https://shop.miele.co.kr/kitchen/cooling-and-wine/fridge-freezer-combinations/",
+                      "snippet": "밀레 대한민국 공식 온라인몰에서 냉장고-냉동고를 만나보세요. 고객님께 가장 적합한 냉장고-냉동고를 경험해보세요."
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response401Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Invalid API Key",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response402Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Payment Required",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z",
+                  "request_detail": {
+                    "keywords": [
+                      "냉장고",
+                      "자전거"
+                    ],
+                    "gl": "kr"
+                  },
+                  "cost": 2,
+                  "remain_credits": 1
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response403Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Not authenticated",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response422Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Validation Error",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z",
+                  "detail": [
+                    {
+                      "message": "Input should be a valid list",
+                      "type": "list_type"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response500Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Internal Server Error",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "x-openai-isConsequential": false
+      }
+    },
+    "/google_trend": {
+      "post": {
+        "tags": [
+          "GoogleTrend"
+        ],
+        "summary": "Google Trend 수집",
+        "description": "실시간 Google 검색 관심도(Trend) 수집(검색 관심도 추이를 0~100 사이의 값으로 표현)",
+        "operationId": "google_trend",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GoogleTrendParameters"
+              },
+              "examples": {
+                "minimum example": {
+                  "value": {
+                    "keywords": [
+                      "냉장고",
+                      "자전거",
+                      "컴퓨터"
+                    ],
+                    "gl": "kr",
+                    "location": "South Korea"
+                  }
+                },
+                "maximum example": {
+                  "value": {
+                    "keywords": [
+                      "냉장고",
+                      "자전거",
+                      "컴퓨터"
+                    ],
+                    "gl": "kr",
+                    "location": "South Korea",
+                    "timeframe": "today 1-m"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleTrendResponse"
+                },
+                "example": {
+                  "result": "OK",
+                  "reason": "SUCCESS",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.1",
+                  "request_at": "2025-10-20T03:51:32.378Z",
+                  "request_detail": {
+                    "keywords": [
+                      "냉장고",
+                      "컴퓨터",
+                      "자전거"
+                    ],
+                    "gl": "kr",
+                    "location": "South Korea",
+                    "timeframe": "today 1-m"
+                  },
+                  "cost": 1,
+                  "remain_credits": 99999,
+                  "data": {
+                    "keywords": [
+                      "냉장고",
+                      "컴퓨터",
+                      "자전거"
+                    ],
+                    "hl": "ko",
+                    "gl": "kr",
+                    "location": "South Korea",
+                    "timeframe": "today 1-m",
+                    "usage_id": "any",
+                    "collected_at": "2025-10-20T03:51:38.492935+00:00",
+                    "elapsed_time": 3.14,
+                    "trends": {
+                      "냉장고": {
+                        "2025-09-20 09:00": 21,
+                        "2025-09-21 09:00": 21,
+                        "2025-09-22 09:00": 18,
+                        "2025-09-23 09:00": 18,
+                        "2025-09-24 09:00": 16,
+                        "2025-09-25 09:00": 18,
+                        "2025-09-26 09:00": 16,
+                        "2025-09-27 09:00": 20,
+                        "2025-09-28 09:00": 17,
+                        "2025-09-29 09:00": 20,
+                        "2025-09-30 09:00": 19,
+                        "2025-10-01 09:00": 19,
+                        "2025-10-02 09:00": 22,
+                        "2025-10-03 09:00": 28,
+                        "2025-10-04 09:00": 26,
+                        "2025-10-05 09:00": 31,
+                        "2025-10-06 09:00": 54,
+                        "2025-10-07 09:00": 36,
+                        "2025-10-08 09:00": 25,
+                        "2025-10-09 09:00": 19,
+                        "2025-10-10 09:00": 20,
+                        "2025-10-11 09:00": 20,
+                        "2025-10-12 09:00": 21,
+                        "2025-10-13 09:00": 20,
+                        "2025-10-14 09:00": 17,
+                        "2025-10-15 09:00": 18,
+                        "2025-10-16 09:00": 17,
+                        "2025-10-17 09:00": 16,
+                        "2025-10-18 09:00": 19,
+                        "2025-10-19 09:00": 19,
+                        "2025-10-20 09:00": 20
+                      },
+                      "컴퓨터": {
+                        "2025-09-20 09:00": 88,
+                        "2025-09-21 09:00": 89,
+                        "2025-09-22 09:00": 88,
+                        "2025-09-23 09:00": 80,
+                        "2025-09-24 09:00": 85,
+                        "2025-09-25 09:00": 86,
+                        "2025-09-26 09:00": 82,
+                        "2025-09-27 09:00": 79,
+                        "2025-09-28 09:00": 84,
+                        "2025-09-29 09:00": 85,
+                        "2025-09-30 09:00": 86,
+                        "2025-10-01 09:00": 81,
+                        "2025-10-02 09:00": 91,
+                        "2025-10-03 09:00": 90,
+                        "2025-10-04 09:00": 92,
+                        "2025-10-05 09:00": 82,
+                        "2025-10-06 09:00": 82,
+                        "2025-10-07 09:00": 91,
+                        "2025-10-08 09:00": 86,
+                        "2025-10-09 09:00": 80,
+                        "2025-10-10 09:00": 95,
+                        "2025-10-11 09:00": 95,
+                        "2025-10-12 09:00": 95,
+                        "2025-10-13 09:00": 94,
+                        "2025-10-14 09:00": 94,
+                        "2025-10-15 09:00": 96,
+                        "2025-10-16 09:00": 95,
+                        "2025-10-17 09:00": 100,
+                        "2025-10-18 09:00": 95,
+                        "2025-10-19 09:00": 94,
+                        "2025-10-20 09:00": 92
+                      },
+                      "자전거": {
+                        "2025-09-20 09:00": 47,
+                        "2025-09-21 09:00": 50,
+                        "2025-09-22 09:00": 43,
+                        "2025-09-23 09:00": 41,
+                        "2025-09-24 09:00": 34,
+                        "2025-09-25 09:00": 37,
+                        "2025-09-26 09:00": 42,
+                        "2025-09-27 09:00": 45,
+                        "2025-09-28 09:00": 40,
+                        "2025-09-29 09:00": 42,
+                        "2025-09-30 09:00": 42,
+                        "2025-10-01 09:00": 42,
+                        "2025-10-02 09:00": 38,
+                        "2025-10-03 09:00": 43,
+                        "2025-10-04 09:00": 45,
+                        "2025-10-05 09:00": 36,
+                        "2025-10-06 09:00": 33,
+                        "2025-10-07 09:00": 36,
+                        "2025-10-08 09:00": 47,
+                        "2025-10-09 09:00": 39,
+                        "2025-10-10 09:00": 35,
+                        "2025-10-11 09:00": 39,
+                        "2025-10-12 09:00": 40,
+                        "2025-10-13 09:00": 33,
+                        "2025-10-14 09:00": 35,
+                        "2025-10-15 09:00": 36,
+                        "2025-10-16 09:00": 35,
+                        "2025-10-17 09:00": 35,
+                        "2025-10-18 09:00": 38,
+                        "2025-10-19 09:00": 38,
+                        "2025-10-20 09:00": 44
+                      }
+                    },
+                    "result": "OK",
+                    "reason": "SUCCESS"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response401Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Invalid API Key",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response402Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Payment Required",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z",
+                  "request_detail": {
+                    "keywords": [
+                      "냉장고",
+                      "자전거"
+                    ],
+                    "gl": "kr"
+                  },
+                  "cost": 2,
+                  "remain_credits": 1
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response403Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Not authenticated",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response422Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Validation Error",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z",
+                  "detail": [
+                    {
+                      "message": "Input should be a valid list",
+                      "type": "list_type"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Response500Model"
+                },
+                "example": {
+                  "result": "FAILED",
+                  "reason": "Internal Server Error",
+                  "source": "listeningmind-mcp-api",
+                  "version": "1.0.3",
+                  "request_at": "1970-01-01T00:00:00.000Z"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "x-openai-isConsequential": false
+      }
+    },
+    "/google_trend/location": {
+      "get": {
+        "tags": [
+          "GoogleTrend"
+        ],
+        "summary": "Google Trend location 목록 조회",
+        "operationId": "google_trend_location",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "x-openai-isConsequential": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AdsMetrics": {
+        "properties": {
+          "competition": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Competition",
+            "description": "\n    competition_index 범위에 따른 구분값\n    * LOW: 0~33\n    * MEDIUM: 34~66\n    * HIGH: 67~100"
+          },
+          "competition_index": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Competition Index",
+            "description": "구글 검색광고 경쟁도 (검색광고 슬롯 판매 비율)"
+          },
+          "cpc": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cpc"
+          },
+          "low_bid_micros": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Low Bid Micros"
+          },
+          "high_bid_micros": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "High Bid Micros"
+          },
+          "volume_avg": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Volume Avg",
+            "description": "최근 3개월의 월별 검색량 평균값"
+          },
+          "volume_total": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Volume Total",
+            "description": "최근 12개월의 월별 검색량 합산값"
+          },
+          "volume_trend": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Volume Trend",
+            "description": "3개월 전 대비 최근 월 검색량 증감율"
+          },
+          "gg_volume_avg": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gg Volume Avg",
+            "description": "(구글)최근 3개월의 월 검색량 평균값"
+          },
+          "gg_volume_total": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gg Volume Total",
+            "description": "(구글)최근 12개월의 월 검색량 합산값"
+          },
+          "gg_volume_trend": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gg Volume Trend",
+            "description": "(구글)3개월 전 대비 최근 월 검색량 증감율"
+          },
+          "nv_volume_avg": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nv Volume Avg",
+            "description": "(네이버)최근 3개월의 월 검색량 평균값"
+          },
+          "nv_volume_total": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nv Volume Total",
+            "description": "(네이버)최근 12개월의 월 검색량 합산값"
+          },
+          "nv_volume_trend": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nv Volume Trend",
+            "description": "(네이버)3개월 전 대비 최근 월 검색량 증감율"
+          }
+        },
+        "type": "object",
+        "title": "AdsMetrics"
+      },
+      "ClusterData": {
+        "properties": {
+          "rels": {
+            "anyOf": [
+              {
+                "items": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rels",
+            "description": "관계 리스트: source, target 리스트"
+          },
+          "communities": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Communities",
+            "description": "커뮤니티(클러스터) 리스트, 키워드 그룹 정보"
+          }
+        },
+        "type": "object",
+        "required": [
+          "rels",
+          "communities"
+        ],
+        "title": "ClusterData"
+      },
+      "ClusterParameters": {
+        "properties": {
+          "keyword": {
+            "type": "string",
+            "minLength": 1,
+            "title": "keyword",
+            "description": "요청 키워드"
+          },
+          "gl": {
+            "type": "string",
+            "enum": [
+              "kr",
+              "jp",
+              "us"
+            ],
+            "title": "geolocation",
+            "description": "국가 코드"
+          },
+          "time_point": {
+            "type": "string",
+            "enum": [
+              "curr",
+              "3m",
+              "6m",
+              "9m",
+              "12m"
+            ],
+            "title": "time point",
+            "description": "조회 대상 ClusterFinder 데이터 시점(기본값: 현재 시점) 현재, 3개월 전, 6개월 전, 9개월 전, 12개월 전",
+            "default": "curr"
+          },
+          "limit": {
+            "type": "integer",
+            "maximum": 10000,
+            "minimum": 1,
+            "title": "limit",
+            "description": "관계수 limit 욥션, default: 500",
+            "default": 500
+          },
+          "hop": {
+            "type": "integer",
+            "maximum": 3,
+            "minimum": 1,
+            "title": "hop",
+            "description": "hop 수",
+            "default": 2
+          },
+          "orientation": {
+            "type": "string",
+            "enum": [
+              "UNDIRECTED",
+              "NATURAL",
+              "REVERSE"
+            ],
+            "title": "direction",
+            "description": "관계 방향",
+            "default": "UNDIRECTED"
+          },
+          "data_type": {
+            "type": "string",
+            "enum": [
+              "communities",
+              "rels",
+              "all"
+            ],
+            "title": "data type",
+            "description": "반환할 데이터 타입(communities: 커뮤니티만, rels: 관계만, all: 전체)",
+            "default": "communities"
+          }
+        },
+        "type": "object",
+        "required": [
+          "keyword",
+          "gl"
+        ],
+        "title": "ClusterParameters"
+      },
+      "ClusterResponse": {
+        "properties": {
+          "result": {
+            "type": "string",
+            "enum": [
+              "OK",
+              "FAILED"
+            ],
+            "title": "성공 여부",
+            "default": "OK"
+          },
+          "reason": {
+            "type": "string",
+            "title": "실패시 추가 설명",
+            "default": "SUCCESS"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "default": "listeningmind-mcp-api"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version",
+            "default": "1.0.3"
+          },
+          "request_at": {
+            "type": "string",
+            "title": "요청시간",
+            "description": "UTC 기준"
+          },
+          "request_detail": {
+            "$ref": "#/components/schemas/ClusterParameters",
+            "description": "요청 받았던 파라미터"
+          },
+          "cost": {
+            "type": "integer",
+            "title": "Cost",
+            "default": 0
+          },
+          "remain_credits": {
+            "type": "integer",
+            "title": "Remain Credits",
+            "default": -1
+          },
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ClusterData"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "request_detail"
+        ],
+        "title": "ClusterResponse"
+      },
+      "Error": {
+        "properties": {
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "message",
+          "type"
+        ],
+        "title": "Error"
+      },
+      "GoogleAdsParameters": {
+        "properties": {
+          "keywords": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 10000,
+            "minItems": 1,
+            "title": "keywords",
+            "description": "요청 키워드 list"
+          },
+          "gl": {
+            "type": "string",
+            "enum": [
+              "kr",
+              "jp",
+              "us"
+            ],
+            "title": "geolocation",
+            "description": "국가 코드"
+          },
+          "year_range": {
+            "type": "integer",
+            "enum": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "title": "year range",
+            "description": "요청 범위(1: 1년, 2: 2년, 3: 3년, 4: 4년)",
+            "default": 4
+          },
+          "location": {
+            "type": "string",
+            "title": "location",
+            "description": "\n        When using this field, need to check if it exists in Google Ads location list\n        "
+          }
+        },
+        "type": "object",
+        "required": [
+          "keywords",
+          "gl",
+          "location"
+        ],
+        "title": "GoogleAdsParameters",
+        "description": "구글 Ads 요청 형식"
+      },
+      "GoogleAdsResponse": {
+        "properties": {
+          "result": {
+            "type": "string",
+            "enum": [
+              "OK",
+              "FAILED"
+            ],
+            "title": "성공 여부",
+            "default": "OK"
+          },
+          "reason": {
+            "type": "string",
+            "title": "실패시 추가 설명",
+            "default": "SUCCESS"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "default": "listeningmind-mcp-api"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version",
+            "default": "1.0.3"
+          },
+          "request_at": {
+            "type": "string",
+            "title": "요청시간",
+            "description": "UTC 기준"
+          },
+          "request_detail": {
+            "$ref": "#/components/schemas/GoogleAdsParameters",
+            "description": "요청 받았던 파라미터"
+          },
+          "cost": {
+            "type": "integer",
+            "title": "",
+            "description": "",
+            "default": 1
+          },
+          "remain_credits": {
+            "type": "integer",
+            "title": "",
+            "description": "",
+            "default": -1
+          },
+          "data": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "",
+            "description": ""
+          }
+        },
+        "type": "object",
+        "required": [
+          "request_detail"
+        ],
+        "title": "GoogleAdsResponse",
+        "description": "구글 Ads 응답 형식"
+      },
+      "GoogleSerpParameters": {
+        "properties": {
+          "keyword": {
+            "type": "string",
+            "minLength": 1,
+            "title": "keyword",
+            "description": "요청 키워드"
+          },
+          "gl": {
+            "type": "string",
+            "enum": [
+              "kr",
+              "jp",
+              "us"
+            ],
+            "title": "geolocation",
+            "description": "국가 코드"
+          },
+          "num": {
+            "type": "integer",
+            "enum": [
+              10,
+              20
+            ],
+            "title": "num",
+            "description": "SERP에 표출할 결과 개수",
+            "default": 20
+          },
+          "device": {
+            "type": "string",
+            "const": "mobile",
+            "title": "device",
+            "description": "요청 환경",
+            "default": "mobile"
+          }
+        },
+        "type": "object",
+        "required": [
+          "keyword",
+          "gl"
+        ],
+        "title": "GoogleSerpParameters",
+        "description": "구글 SERP 요청 형식"
+      },
+      "GoogleSerpResponse": {
+        "properties": {
+          "result": {
+            "type": "string",
+            "enum": [
+              "OK",
+              "FAILED"
+            ],
+            "title": "성공 여부",
+            "default": "OK"
+          },
+          "reason": {
+            "type": "string",
+            "title": "실패시 추가 설명",
+            "default": "SUCCESS"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "default": "listeningmind-mcp-api"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version",
+            "default": "1.0.3"
+          },
+          "request_at": {
+            "type": "string",
+            "title": "요청시간",
+            "description": "UTC 기준"
+          },
+          "request_detail": {
+            "$ref": "#/components/schemas/GoogleSerpParameters",
+            "description": "요청 받았던 파라미터"
+          },
+          "cost": {
+            "type": "integer",
+            "title": "",
+            "description": "",
+            "default": 1
+          },
+          "remain_credits": {
+            "type": "integer",
+            "title": "",
+            "description": "",
+            "default": -1
+          },
+          "data": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "",
+            "description": ""
+          }
+        },
+        "type": "object",
+        "required": [
+          "request_detail"
+        ],
+        "title": "GoogleSerpResponse",
+        "description": "구글 SERP 응답 형식"
+      },
+      "GoogleTrendParameters": {
+        "properties": {
+          "keywords": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 5,
+            "minItems": 1,
+            "title": "keywords",
+            "description": "요청 키워드 list"
+          },
+          "gl": {
+            "type": "string",
+            "enum": [
+              "kr",
+              "jp",
+              "us"
+            ],
+            "title": "geolocation",
+            "description": "국가 코드"
+          },
+          "location": {
+            "type": "string",
+            "title": "location",
+            "description": "\n        When using this field, need to check if it exists in Google Trend location list\n        "
+          },
+          "timeframe": {
+            "type": "string",
+            "enum": [
+              "now 1-d",
+              "now 7-d",
+              "today 1-m",
+              "today 3-m",
+              "today 12-m",
+              "today 5-y",
+              "all"
+            ],
+            "title": "Timeframe",
+            "default": "today 1-m"
+          }
+        },
+        "type": "object",
+        "required": [
+          "keywords",
+          "gl",
+          "location"
+        ],
+        "title": "GoogleTrendParameters",
+        "description": "구글 트렌드 요청 형식\n    "
+      },
+      "GoogleTrendResponse": {
+        "properties": {
+          "result": {
+            "type": "string",
+            "enum": [
+              "OK",
+              "FAILED"
+            ],
+            "title": "성공 여부",
+            "default": "OK"
+          },
+          "reason": {
+            "type": "string",
+            "title": "실패시 추가 설명",
+            "default": "SUCCESS"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "default": "listeningmind-mcp-api"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version",
+            "default": "1.0.3"
+          },
+          "request_at": {
+            "type": "string",
+            "title": "요청시간",
+            "description": "UTC 기준"
+          },
+          "request_detail": {
+            "$ref": "#/components/schemas/GoogleTrendParameters",
+            "description": "요청 받았던 파라미터"
+          },
+          "cost": {
+            "type": "integer",
+            "title": "Cost",
+            "default": 1
+          },
+          "remain_credits": {
+            "type": "integer",
+            "title": "Remain Credits",
+            "default": -1
+          },
+          "data": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Data"
+          }
+        },
+        "type": "object",
+        "required": [
+          "request_detail"
+        ],
+        "title": "GoogleTrendResponse",
+        "description": "구글 트렌드 응답 형식\n    "
+      },
+      "KeywordData": {
+        "properties": {
+          "infos": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/KeywordInfo"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Infos"
+          }
+        },
+        "type": "object",
+        "required": [
+          "infos"
+        ],
+        "title": "KeywordData"
+      },
+      "KeywordInfo": {
+        "properties": {
+          "keyword": {
+            "type": "string",
+            "title": "Keyword"
+          },
+          "ads_metrics": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AdsMetrics"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "features": {
+            "anyOf": [
+              {},
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Features",
+            "description": "\n해당 키워드의 검색 결과 페이지(SERP)에 어떤 검색 스니펫(아래 리스트 참조)이 노출 되고 있는 지를 제공합니다.\n> https://kr.listeningmind.com/hubble-guide/filter-serp-type/\n\n존재하는 검색 스니펫 타입 종류는 아래와 같습니다.\n* f_ad_bottom: 검색 결과 하단에 존재하는 광고 (해당 키워드가 상업형 혹은 거래형 키워드일 가능성을 보여줌)\n* f_ad_top: 검색 결과 상단에 존재하는 광고 (해당 키워드가 상업형 혹은 거래형 키워드일 가능성을 보여줌)\n* f_ads_bottom: 검색 결과 하단에 존재하는 광고 (해당 키워드가 상업형 혹은 거래형 키워드일 가능성을 보여줌)\n* f_ads_top: 검색 결과 상단에 존재하는 광고 (해당 키워드가 상업형 혹은 거래형 키워드일 가능성을 보여줌)\n* f_adult_certification: 성인 인증이 필요한 검색 결과\n* f_app_results: 앱 검색 결과\n* f_articles: 뉴스 기사 검색 결과 (해당 키워드가 뉴스성이 있는 키워드임을 보여줌)\n* f_featured_snippet: 구글의 피쳐드 스니펫\n* f_featured_snippet_ordered_list: 구글의 피쳐드 스니펫 중 순서가 있는 리스트\n* f_featured_snippet_table: 구글의 피쳐드 스니펫 중 표 형태로 제공되는 리스트\n* f_featured_snippet_unordered_list: 구글의 피쳐드 스니펫 중 순서가 없는 리스트\n* f_featured_snippet_video_exist: 구글의 피쳐드 스니펫 중 비디오가 포함된 리스트\n* f_google_play: 구글 플레이 검색 결과 (해당 키워드가 앱과 관련된 키워드임을 보여줌)\n* f_images: 이미지 검색 결과 (해당 키워드가 이미지 검색 결과가 있는 키워드임을 보여줌)\n* f_job_search: 구글의 구인 검색 결과 (해당 키워드가 구인과 관련된 키워드임을 보여줌)\n* f_knowledge_panel: 구글의 지식 패널 검색 결과 (해당 키워드가 브랜드나 인물 등과 관련된 키워드임을 보여줌)\n* f_local_results: 구글의 로컬 검색 결과 (해당 키워드가 지역과 관련된 키워드임을 보여줌)\n* f_organic_results: 구글의 유기적 검색 결과 \n* f_organic_results_rating: 구글의 유기적 검색 결과 중 평점이 있는 검색 결과 (해당 키워드의 제품이나 브랜드가 리뷰나 평점을 받고 있음을 보여줌)\n* f_organic_results_video: 구글의 유기적 검색 결과 중 비디오가 포함된 검색 결과 (해당 키워드가 비디오 포맷의 콘텐츠에 대한 니즈를 가질 가능성 혹은 유튜브에서도 검색되는 키워드임을 보여줌)\n* f_others: 기타 검색 결과\n* f_people_also_ask_for: 구글의 People Also Ask 검색 결과\n* f_people_also_search_for: 구글의 People Also Search For 검색 결과\n* f_product_comparison: 제품 비교 검색 결과\n* f_related_searches: 구글의 Related Searches 검색 결과\n* f_safe_search: 안전 검색이 적용된 검색 결과 (해당 키워드가 안전 검색이 적용된 키워드임을 보여줌)\n* f_scholar: 구글 스칼라 검색 결과 (해당 키워드가 학술적이거나 연구 관련된 키워드임을 보여줌)\n* f_sitelinks: 구글의 사이트 링크 검색 결과 (해당 키워드가 특정 웹사이트나 브랜드와 관련된 키워드임을 보여줌)\n* f_sns: 소셜 미디어 검색 결과 (해당 키워드가 소셜 미디어에서 급상승 혹은 관련 맨션이 많은 키워드임을 보여줌)\n* f_spell_check: 구글의 스펠링 검사 검색 결과 (해당 키워드가 오타 혹은 일반적으로 상요되는 다른 표현이 있는 키워드임을 보여줌)\n* f_sticky_header_tabs: 구글의 스티키 헤더 탭 검색 결과 (해당 키워드가 검색 결과 상단에 탭 형태로 제공되는 키워드임을 보여줌)\n* f_unit_converter: 단위 변환 검색 결과 \n* f_unknown: 구글의 알수 없는 검색 결과\n* f_video_carousels: 구글의 비디오 캐러셀 검색 결과 (해당 키워드가 비디오 포맷의 콘텐츠에 대한 니즈를 가질 가능성 혹은 유튜브에서도 검색되는 키워드임을 보여줌)\n* f_video_results: 구글의 비디오 검색 결과 (해당 키워드가 비디오 포맷의 콘텐츠에 대한 니즈를 가질 가능성 혹은 유튜브에서도 검색되는 키워드임을 보여줌)\n    "
+          },
+          "intents": {
+            "anyOf": [
+              {},
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Intents",
+            "description": "\n검색 인텐트(https://www.ascentkorea.com/what-is-search-intent/)\n\n* I: 정보형(Informational) 잠재 소비자가 제품 자체 정보나 제품이 포함된 카테고리 등에 대한 정보를 얻기 위한 검색\n* N: 네비게이셔널형(Navigational) 잠재 소비자가 특정 웹사이트나 브랜드 혹은 매장 위치를 찾기 위한 검색\n* C: 상업형(Commercial) 구매 전 단계에서 비교, 리뷰, 추천 등의 구매 의사 결정에 도움이 되는 정보를 구하려는 목적의 검색\n* T: 거래형(Transactional)구매를 목적으로 하는 검색\n    "
+          },
+          "demography": {
+            "anyOf": [
+              {},
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Demography",
+            "description": "\n검색 유저 특성(https://kr.listeningmind.com/hubble-guide/filter-user/)\n\n* m_gender: 표준편차 (시그마 1) 이상으로 남성이 더 많이 검색했을 가능성이 높은 키워드\n* f_gender: 표준편차 (시그마 1) 이상으로 여성이 더 많이 검색했을 가능성이 높은 키워드\n* a0: 표준편차 (시그마 1) 이상으로 12세 이하가 더 많이 검색했을 가능성이 높은 키워드\n* a13:  표준편차 (시그마 1) 이상으로 13~19세가 더 많이 검색했을 가능성이 높은 키워드\n* a20: 표준편차 (시그마 1) 이상으로 20~24세가 더 많이 검색했을 가능성이 높은 키워드\n* a25: 표준편차 (시그마 1) 이상으로 25~29세가 더 많이 검색했을 가능성이 높은 키워드\n* a30: 표준편차 (시그마 1) 이상으로 30~39세가 더 많이 검색했을 가능성이 높은 키워드\n* a40: 표준편차 (시그마 1) 이상으로 40~49세가 더 많이 검색했을 가능성이 높은 키워드\n* a50: 50세 이상이 더 많이 검색했을 가능성이 높은 키워드\n* m_gender_ratio: 남성 검색자의 비율\n* f_gender_ratio: 여성 검색자의 비율\n* a0_ratio: 12세 이하 검색자의 비율\n* a13_ratio: 13~19세 검색자의 비율  \n* a20_ratio: 20~24세 검색자의 비율\n* a25_ratio: 25~29세 검색자의 비율\n* a30_ratio: 30~39세 검색자의 비율\n* a40_ratio: 40~49세 검색자의 비율\n* a50_ratio: 50세 이상 검색자의 비율    \n    "
+          },
+          "monthly_volume": {
+            "anyOf": [
+              {
+                "items": {},
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Monthly Volume",
+            "description": "\n월별 검색량\n\n* month: 해당 월\n* gg: 구글 검색량\n* nv: 네이버 검색량\n* total: 구글 검색량 + 네이버 검색량\n    "
+          }
+        },
+        "type": "object",
+        "required": [
+          "keyword"
+        ],
+        "title": "KeywordInfo"
+      },
+      "KeywordParameters": {
+        "properties": {
+          "keywords": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 1000,
+            "minItems": 1,
+            "title": "keywords",
+            "description": "요청 키워드 list"
+          },
+          "gl": {
+            "type": "string",
+            "enum": [
+              "kr",
+              "jp",
+              "us"
+            ],
+            "title": "geolocation",
+            "description": "국가 코드"
+          }
+        },
+        "type": "object",
+        "required": [
+          "keywords",
+          "gl"
+        ],
+        "title": "KeywordParameters"
+      },
+      "KeywordResponse": {
+        "properties": {
+          "result": {
+            "type": "string",
+            "enum": [
+              "OK",
+              "FAILED"
+            ],
+            "title": "성공 여부",
+            "default": "OK"
+          },
+          "reason": {
+            "type": "string",
+            "title": "실패시 추가 설명",
+            "default": "SUCCESS"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "default": "listeningmind-mcp-api"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version",
+            "default": "1.0.3"
+          },
+          "request_at": {
+            "type": "string",
+            "title": "요청시간",
+            "description": "UTC 기준"
+          },
+          "request_detail": {
+            "$ref": "#/components/schemas/KeywordParameters",
+            "description": "요청 받았던 파라미터"
+          },
+          "cost": {
+            "type": "integer",
+            "title": "Cost",
+            "default": 0
+          },
+          "remain_credits": {
+            "type": "integer",
+            "title": "Remain Credits",
+            "default": -1
+          },
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/KeywordData"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "request_detail"
+        ],
+        "title": "KeywordResponse"
+      },
+      "KeywordSearchParameters": {
+        "properties": {
+          "keywords": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 100,
+            "minItems": 1,
+            "title": "keywords",
+            "description": "요청 키워드 list"
+          },
+          "gl": {
+            "type": "string",
+            "enum": [
+              "kr",
+              "jp",
+              "us"
+            ],
+            "title": "geolocation",
+            "description": "국가 코드"
+          },
+          "volume_threshold": {
+            "type": "integer",
+            "title": "volume threshold",
+            "description": "볼륨 임계값",
+            "default": 100
+          },
+          "limit": {
+            "type": "integer",
+            "maximum": 10000,
+            "minimum": 1,
+            "title": "limit",
+            "description": "최대 검색 결과 수",
+            "default": 100
+          }
+        },
+        "type": "object",
+        "required": [
+          "keywords",
+          "gl"
+        ],
+        "title": "KeywordSearchParameters"
+      },
+      "KeywordSearchResponse": {
+        "properties": {
+          "result": {
+            "type": "string",
+            "enum": [
+              "OK",
+              "FAILED"
+            ],
+            "title": "성공 여부",
+            "default": "OK"
+          },
+          "reason": {
+            "type": "string",
+            "title": "실패시 추가 설명",
+            "default": "SUCCESS"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "default": "listeningmind-mcp-api"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version",
+            "default": "1.0.3"
+          },
+          "request_at": {
+            "type": "string",
+            "title": "요청시간",
+            "description": "UTC 기준"
+          },
+          "request_detail": {
+            "$ref": "#/components/schemas/KeywordSearchParameters",
+            "description": "요청 받았던 파라미터"
+          },
+          "cost": {
+            "type": "integer",
+            "title": "Cost",
+            "default": 0
+          },
+          "remain_credits": {
+            "type": "integer",
+            "title": "Remain Credits",
+            "default": -1
+          },
+          "data": {
+            "anyOf": [
+              {},
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Data"
+          }
+        },
+        "type": "object",
+        "required": [
+          "request_detail"
+        ],
+        "title": "KeywordSearchResponse"
+      },
+      "PathFinderParameters": {
+        "properties": {
+          "keyword": {
+            "type": "string",
+            "minLength": 1,
+            "title": "keyword",
+            "description": "요청 키워드"
+          },
+          "gl": {
+            "type": "string",
+            "enum": [
+              "kr",
+              "jp",
+              "us"
+            ],
+            "title": "geolocation",
+            "description": "국가 코드"
+          },
+          "time_point": {
+            "type": "string",
+            "enum": [
+              "curr",
+              "3m",
+              "6m",
+              "9m",
+              "12m"
+            ],
+            "title": "time point",
+            "description": "조회 대상 PathFinder 데이터 시점(기본값: 현재 시점) 현재, 3개월 전, 6개월 전, 9개월 전, 12개월 전",
+            "default": "curr"
+          },
+          "limit": {
+            "type": "integer",
+            "maximum": 1000,
+            "minimum": 1,
+            "title": "limit",
+            "description": "최대 검색 결과 수",
+            "default": 300
+          }
+        },
+        "type": "object",
+        "required": [
+          "keyword",
+          "gl"
+        ],
+        "title": "PathFinderParameters",
+        "description": "PathFinder 요청 형식"
+      },
+      "PathFinderResponse": {
+        "properties": {
+          "result": {
+            "type": "string",
+            "enum": [
+              "OK",
+              "FAILED"
+            ],
+            "title": "성공 여부",
+            "default": "OK"
+          },
+          "reason": {
+            "type": "string",
+            "title": "실패시 추가 설명",
+            "default": "SUCCESS"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "default": "listeningmind-mcp-api"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version",
+            "default": "1.0.3"
+          },
+          "request_at": {
+            "type": "string",
+            "title": "요청시간",
+            "description": "UTC 기준"
+          },
+          "request_detail": {
+            "$ref": "#/components/schemas/PathFinderParameters",
+            "description": "요청 받았던 파라미터"
+          },
+          "cost": {
+            "type": "integer",
+            "title": "Cost",
+            "default": 1
+          },
+          "remain_credits": {
+            "type": "integer",
+            "title": "Remain Credits",
+            "default": -1
+          },
+          "data": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Data"
+          }
+        },
+        "type": "object",
+        "required": [
+          "request_detail"
+        ],
+        "title": "PathFinderResponse",
+        "description": "검색 키워드의 검색 경로 분석 결과 "
+      },
+      "Response401Model": {
+        "properties": {
+          "result": {
+            "type": "string",
+            "enum": [
+              "OK",
+              "FAILED"
+            ],
+            "title": "성공 여부",
+            "default": "FAILED"
+          },
+          "reason": {
+            "type": "string",
+            "title": "실패시 추가 설명"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "default": "listeningmind-mcp-api"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version",
+            "default": "1.0.3"
+          },
+          "request_at": {
+            "type": "string",
+            "title": "요청시간",
+            "description": "UTC 기준"
+          }
+        },
+        "type": "object",
+        "title": "Response401Model"
+      },
+      "Response402Model": {
+        "properties": {
+          "result": {
+            "type": "string",
+            "enum": [
+              "OK",
+              "FAILED"
+            ],
+            "title": "성공 여부",
+            "default": "FAILED"
+          },
+          "reason": {
+            "type": "string",
+            "title": "실패시 추가 설명"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "default": "listeningmind-mcp-api"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version",
+            "default": "1.0.3"
+          },
+          "request_at": {
+            "type": "string",
+            "title": "요청시간",
+            "description": "UTC 기준"
+          },
+          "request_detail": {
+            "title": "Request Detail",
+            "description": "요청 받았던 파라미터"
+          },
+          "cost": {
+            "type": "integer",
+            "title": "Cost",
+            "default": 0
+          },
+          "remain_credits": {
+            "type": "integer",
+            "title": "Remain Credits",
+            "default": -1
+          }
+        },
+        "type": "object",
+        "title": "Response402Model"
+      },
+      "Response403Model": {
+        "properties": {
+          "result": {
+            "type": "string",
+            "enum": [
+              "OK",
+              "FAILED"
+            ],
+            "title": "성공 여부",
+            "default": "FAILED"
+          },
+          "reason": {
+            "type": "string",
+            "title": "실패시 추가 설명"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "default": "listeningmind-mcp-api"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version",
+            "default": "1.0.3"
+          },
+          "request_at": {
+            "type": "string",
+            "title": "요청시간",
+            "description": "UTC 기준"
+          }
+        },
+        "type": "object",
+        "title": "Response403Model"
+      },
+      "Response422Model": {
+        "properties": {
+          "result": {
+            "type": "string",
+            "enum": [
+              "OK",
+              "FAILED"
+            ],
+            "title": "성공 여부",
+            "default": "FAILED"
+          },
+          "reason": {
+            "type": "string",
+            "title": "실패시 추가 설명"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "default": "listeningmind-mcp-api"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version",
+            "default": "1.0.3"
+          },
+          "request_at": {
+            "type": "string",
+            "title": "요청시간",
+            "description": "UTC 기준"
+          },
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "Response422Model"
+      },
+      "Response500Model": {
+        "properties": {
+          "result": {
+            "type": "string",
+            "enum": [
+              "OK",
+              "FAILED"
+            ],
+            "title": "성공 여부",
+            "default": "FAILED"
+          },
+          "reason": {
+            "type": "string",
+            "title": "실패시 추가 설명"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "default": "listeningmind-mcp-api"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version",
+            "default": "1.0.3"
+          },
+          "request_at": {
+            "type": "string",
+            "title": "요청시간",
+            "description": "UTC 기준"
+          }
+        },
+        "type": "object",
+        "title": "Response500Model"
+      }
+    },
+    "securitySchemes": {
+      "APIKeyHeader": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "LM-API-KEY"
+      }
+    }
+  }
+}
