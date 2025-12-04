@@ -95,6 +95,7 @@ from open_webui.routers import (
     scim,
     custom_openai,
     gemini,
+    listeningmind_api,
     responses,
 )
 
@@ -1398,6 +1399,9 @@ app.include_router(custom_openai.router)
 
 # Google Gemini API
 app.include_router(gemini.router)
+
+# ListeningMind SEO API
+app.include_router(listeningmind_api.router)
 
 # OpenAI Responses API (for o3-deep-research and advanced reasoning models)
 app.include_router(responses.router)
