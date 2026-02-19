@@ -1,0 +1,14 @@
+usage_date_utc,model_version,api_key,workspace,usage_type,context_window,usage_input_tokens_no_cache,usage_input_tokens_cache_write_5m,usage_input_tokens_cache_write_1h,usage_input_tokens_cache_read,usage_output_tokens,web_search_count
+2025-12-01,claude-sonnet-4-5-20250929,BcaveKey,Default,standard,≤ 200k,468432,0,0,0,34027,0
+2025-12-02,claude-sonnet-4-5-20250929,BcaveKey,Default,standard,≤ 200k,1842972,0,0,0,65776,0
+2025-12-03,claude-sonnet-4-5-20250929,BcaveKey,Default,standard,≤ 200k,108836,0,0,0,11861,0
+2025-12-04,claude-sonnet-4-5-20250929,BcaveKey,Default,standard,≤ 200k,27195,0,0,0,2219,0
+2025-12-05,claude-sonnet-4-5-20250929,BcaveKey,Default,standard,≤ 200k,243970,0,0,0,27047,0
+2025-12-08,claude-sonnet-4-20250514,BcaveKey,Default,standard,≤ 200k,31658,0,0,0,1120,0
+2025-12-09,claude-sonnet-4-5-20250929,BcaveKey,Default,standard,≤ 200k,54789,0,0,0,6582,0
+2025-12-11,claude-sonnet-4-20250514,BcaveKey,Default,standard,≤ 200k,5620,0,0,0,852,0
+2025-12-12,claude-sonnet-4-5-20250929,BcaveKey,Default,standard,≤ 200k,91968,0,0,0,9627,0
+2025-12-15,claude-sonnet-4-5-20250929,BcaveKey,Default,standard,≤ 200k,77472,0,0,0,6198,0
+2025-12-16,claude-opus-4-20250514,BcaveKey,Default,standard,≤ 200k,26504,0,0,0,3514,0
+2025-12-16,claude-sonnet-4-20250514,BcaveKey,Default,standard,≤ 200k,22630,0,0,0,569,0
+2025-12-17,claude-sonnet-4-5-20250929,BcaveKey,Default,standard,≤ 200k,69705,0,0,0,5144,0

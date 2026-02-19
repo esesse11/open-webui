@@ -1,0 +1,23 @@
+usage_date_utc,model,workspace,api_key,usage_type,context_window,token_type,cost_usd,cost_type
+2025-03-18,Claude Haiku 3.5,Default,BcaveKey,message,≤ 200k,input_no_cache,0.00,token
+2025-03-18,Claude Haiku 3.5,Default,BcaveKey,message,≤ 200k,output,0.00,token
+2025-03-18,Claude Sonnet 3.7,Default,BcaveKey,message,≤ 200k,input_no_cache,0.03,token
+2025-03-18,Claude Sonnet 3.7,Default,BcaveKey,message,≤ 200k,output,0.14,token
+2025-03-20,Claude Sonnet 3.7,Default,BcaveKey,message,≤ 200k,input_no_cache,0.04,token
+2025-03-20,Claude Sonnet 3.7,Default,BcaveKey,message,≤ 200k,output,0.04,token
+2025-03-25,Claude Sonnet 3.7,Default,BcaveKey,message,≤ 200k,input_no_cache,0.00,token
+2025-03-25,Claude Sonnet 3.7,Default,BcaveKey,message,≤ 200k,output,0.00,token
+2025-03-26,Claude Haiku 3.5,Default,BcaveKey,message,≤ 200k,input_no_cache,0.00,token
+2025-03-26,Claude Haiku 3.5,Default,BcaveKey,message,≤ 200k,output,0.00,token
+2025-03-26,Claude Sonnet 3.5 2024-10-22,Default,BcaveKey,message,≤ 200k,input_no_cache,0.01,token
+2025-03-26,Claude Sonnet 3.5 2024-10-22,Default,BcaveKey,message,≤ 200k,output,0.06,token
+2025-03-26,Claude Sonnet 3.7,Default,BcaveKey,message,≤ 200k,input_no_cache,0.08,token
+2025-03-26,Claude Sonnet 3.7,Default,BcaveKey,message,≤ 200k,output,0.12,token
+2025-03-27,Claude Sonnet 3.7,Default,BcaveKey,message,≤ 200k,input_no_cache,0.14,token
+2025-03-27,Claude Sonnet 3.7,Default,BcaveKey,message,≤ 200k,output,0.27,token
+2025-03-28,Claude Sonnet 3.7,Default,BcaveKey,message,≤ 200k,input_no_cache,0.27,token
+2025-03-28,Claude Sonnet 3.7,Default,BcaveKey,message,≤ 200k,output,0.26,token
+2025-03-30,Claude Sonnet 3.7,Default,BcaveKey,message,≤ 200k,input_no_cache,2.60,token
+2025-03-30,Claude Sonnet 3.7,Default,BcaveKey,message,≤ 200k,output,0.98,token
+2025-03-31,Claude Sonnet 3.7,Default,BcaveKey,message,≤ 200k,input_no_cache,0.54,token
+2025-03-31,Claude Sonnet 3.7,Default,BcaveKey,message,≤ 200k,output,0.30,token

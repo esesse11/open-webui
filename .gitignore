@@ -49,3 +49,31 @@ invoice_check.txt
 # Generated HTML reports
 *.html
 bcave_25/
+
+# Binaries & installers
+*.exe
+*.msi
+
+# Large data / output files
+pdf/
+results/
+nul
+
+# Backup & temp folders
+BACKUP/
+etc/
+폴더정리/
+
+# Nested repos (managed separately)
+image-search/
+
+# Claude Code settings
+.claude/
+
+# Database files
+*.db
+*.sql
+
+# Windows artifacts
+Thumbs.db
+desktop.ini
